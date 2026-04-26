@@ -2,12 +2,19 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 import json
 import os
+import sys
 import threading
 from pynput import mouse as pmouse, keyboard as pkeyboard
 import pystray
 from PIL import Image, ImageDraw
 
-CONFIG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "pixelpin_config.json")
+if getattr(sys, 'frozen', False): 
+    BASE_DIR = os.path.dirname(sys.executable)
+else:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+CONFIG_FILE = os.path.join(BASE_DIR, "pixelpin_config.json")
+# ----------------------------------------------------------
 
 DEFAULT_CONFIG = {
     "copy_trigger": "mouse:right",
@@ -291,7 +298,6 @@ class CoordPicker:
         self.root.mainloop()
 
     def _setup_tray(self):
-        # Заворачиваем вызовы из трея в основной поток Tkinter, чтобы избежать крешей
         m = pystray.Menu(
             pystray.MenuItem("Settings", lambda icon, item: self.root.after(0, self._open_settings)),
             pystray.MenuItem("Quit", lambda icon, item: self.root.after(0, self._quit))
