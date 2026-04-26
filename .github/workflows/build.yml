@@ -1,12 +1,13 @@
 name: Build PixelPin
 
 on:
-  workflow_dispatch: # Позволяет запускать сборку вручную по кнопке
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os: [windows-latest, macos-latest, ubuntu-latest]
 
@@ -35,9 +36,9 @@ jobs:
       shell: bash
       run: |
         mkdir PixelPin
-        cp dist/pixelpin* PixelPin/
-        cp README.md PixelPin/
-        cp LICENSE PixelPin/
+        cp -r dist/* PixelPin/
+        cp README.md PixelPin/ || true
+        cp LICENSE PixelPin/ || true
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
