@@ -7,7 +7,7 @@
   ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝     ╚═╝╚═╝  ╚═══╝
 ```
 
-**screen coordinate picker — hover, right-click, paste**
+**Screen coordinate picker — hover, right-click, paste**
 
 <p align="left">
   <img src="https://img.shields.io/badge/python-3.8%2B-blue?style=flat-square&logo=python&logoColor=white"/>
