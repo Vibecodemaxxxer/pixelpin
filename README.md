@@ -38,6 +38,15 @@ python pixelpin.py
 The copied format is plain `x, y`.
 
 Note: Copy and Undo triggers can be remapped to any key or mouse button in the Settings (Tab). To quit the app, use the system tray icon or the Settings menu.
+
+## 📥 Download & Usage
+
+Download the standalone version for your operating system:
+
+- [🖥️ **Download for Windows**](https://github.com/Vibecodemaxxxer/pixelpin/releases/latest/download/PixelPin-windows-latest.zip)
+- [🍎 **Download for macOS**](https://github.com/Vibecodemaxxxer/pixelpin/releases/latest/download/PixelPin-macos-latest.zip)
+- [🐧 **Download for Linux**](https://github.com/Vibecodemaxxxer/pixelpin/releases/latest/download/PixelPin-ubuntu-latest.zip)
+
 ## Features
 
 - **Live Tracking:** A borderless, transparent tooltip follows the cursor without interfering with windows underneath.
